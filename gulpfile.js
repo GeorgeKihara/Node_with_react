@@ -126,7 +126,7 @@ gulp.task('build', ['styles', 'vendor', 'browserify']);
 gulp.task('serveprod', function() {
   connect.server({
     root: [your_project_path],
-    port: process.env.PORT || 5000, // localhost:5000
+    port: process.env.PORT || 4000, // localhost:4000
     livereload: false
   });
 });
