@@ -21,9 +21,9 @@ var _ = require('underscore');
 
 var app = express();
 
-mongoose.connect(config.database);
-mongoose.connection.on('error', function() {
-  console.info('Error: Could not connect to MongoDB. Did you forget to run `mongod`?');
+mongoose.connect(config.database,{useMongoClient: true});
+mongoose.connection.on('connected', function() {
+  console.info('Connected to the database');
 });
 
 app.set('port', process.env.PORT || 4000);
